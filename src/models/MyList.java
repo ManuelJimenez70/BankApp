@@ -69,24 +69,4 @@ public class MyList {
 		return first;
 	}
 
-	public static void main(String[] args) {
-		Node<Transaction> t1 = new Node<>(new Transaction(TransactionType.CONSIGN, 1000));
-		Node<Transaction> t2 = new Node<>(new Transaction(TransactionType.CONSIGN, 3000));
-		Node<Transaction> t3 = new Node<>(new Transaction(TransactionType.WITHDRAWALS, 4000));
-		Node<Transaction> t4 = new Node<>(new Transaction(TransactionType.CONSIGN, 1000));
-
-		MyList list = new MyList(t1);
-		try {
-
-			list.addElement(t2);
-
-			list.addElement(t3);
-
-			list.addElement(t4);
-			System.out.println(list.getActualbalance());
-			System.out.println(System.getProperty("user.name"));
-		} catch (OutOfBalanceException e) {
-			e.printStackTrace();
-		}
-	}
 }
